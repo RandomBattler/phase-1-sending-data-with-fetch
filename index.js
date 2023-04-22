@@ -15,10 +15,14 @@ function submitData(name_, email_){
       return response.json();
     })
     .then(function (object) {
-      console.log(object.id);
+        const d = document.createElement('div');
+        document.querySelector('body').appendChild(d);
+        d.innerHTML = object.id;
     })
     .catch(function (error) {
-      alert("Bad things! Ragnarők!");
-      console.log(error.message);
+      alert("Catch this error!"); 
+      const d = document.createElement('div');
+      document.querySelector('body').appendChild(d);
+      d.innerHTML = error.message;
     });
 }
